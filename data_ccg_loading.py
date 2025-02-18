@@ -153,3 +153,12 @@ def load_or_save_dict(_fname, _main, **params):
 
 def log_kv(**kwargs):
     print(f"{kwargs}")
+
+
+if __name__ == '__main__':
+    topN = 1000 # 2000
+    only_positive_lag = True
+    sessions = ["L1R0-1_2022.03.28.01_expt20220503", "L1R0-2_2022.03.28.03_expt20220504", 
+                "L1R0-3_2022.04.21.01_expt20220506",]
+    data_readed = read_multiple_data(sessions, topN, only_positive_lag=only_positive_lag)
+    ccgs_z_all, labels_np_all, labels_back_np_all, lag_ts, pair_info_all, scores_all = data_readed
